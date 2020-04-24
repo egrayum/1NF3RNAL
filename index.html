@@ -9,16 +9,20 @@
     var mouseX;
     var mouseY;
     function draws () {
+     //"player"
      ctx.fillStyle = "#333";
      ctx.fillRect(100, 100, 50, 50);
+     //clearing square
      ctx.fillStyle = "#666";
      ctx.fillRect(345, 15, 400, 90);
+     //gets mouseX and mouseY and increases score
      mouseX = event.clientX;
      mouseY = event.clientY;
+     score += 1;
+     //draws text
+     ctx.fillStyle = "#333"; 
      ctx.font = "30px Arial"; 
-     ctx.fillStyle = "#333";
      ctx.fillText("mouseX: " + mouseX + " mouseY: " + mouseY, 350, 100);
-     score++;
      ctx.fillText("Score: " + score, 350, 50);
     }
    </script>
