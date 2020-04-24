@@ -8,10 +8,12 @@
     var score = 0;
     var mouseX;
     var mouseY;
+    var X = 120:
+    var Y = 120;
     function draws () {
      //"player"
      ctx.fillStyle = "#333";
-     ctx.fillRect(100, 100, 50, 50);
+     ctx.fillRect(X, Y, 50, 50);
      //clearing square
      ctx.fillStyle = "#666";
      ctx.fillRect(345, 15, 400, 90);
@@ -24,6 +26,31 @@
      ctx.font = "30px Arial"; 
      ctx.fillText("mouseX: " + mouseX + " mouseY: " + mouseY, 350, 100);
      ctx.fillText("Score: " + score, 350, 50);
+     //ifs for moving the player
+     //move left
+     if (X > mouseX) {
+      X -= 50;
+      ctx.fillStyle = "#333";
+      ctx.fillRect(X, Y, 50, 50);
+     }
+     //move right
+     if (X < mouseX) {
+      X += 50;
+      ctx.fillStyle = "#333";
+      ctx.fillRect(X, Y, 50, 50);
+     }
+     //move up
+     if (Y > mouseY) {
+      Y -= 50;
+      ctx.fillStyle = "#333";
+      ctx.fillRect(X, Y, 50, 50);
+     }
+     //move down
+     if (Y < mouseY) {
+      Y += 50;
+      ctx.fillStyle = "#333";
+      ctx.fillRect(X, Y, 50, 50);
+     }
     }
    </script>
   </div>
