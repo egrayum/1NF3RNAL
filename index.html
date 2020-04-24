@@ -25,29 +25,29 @@
      ctx.fillText("Score: " + score, 350, 50);
      //ifs for moving the player
      //move left
-     /*if (X > mouseX) {
+     if (mouseY < Y + 60 && mouseY > Y - 10 && mouseX < X) {
       X -= 50;
       ctx.fillStyle = "#333";
       ctx.fillRect(X, Y, 50, 50);
-     }*/
+     }
      //move right
-     if (mouseY < Y + 60 && mouseY > Y - 10 && mouseX > X + 50) {
+     if (mouseY < Y + 60 && mouseY > Y - 10 && mouseX > X) {
       X += 50;
       ctx.fillStyle = "#333";
       ctx.fillRect(X, Y, 50, 50);
      }
      //move up
-     /*if (Y > mouseY) {
+     if (mouseX < X + 60 && mouseX > X - 10 && mouseY < Y) {
       Y -= 50;
       ctx.fillStyle = "#333";
       ctx.fillRect(X, Y, 50, 50);
      }
      //move down
-     if (Y < mouseY) {
+     if (mouseX < X + 60 && mouseX > X - 10 && mouseY > Y) {
       Y += 50;
       ctx.fillStyle = "#333";
       ctx.fillRect(X, Y, 50, 50);
-     }*/
+     }
      //"player"
      ctx.fillStyle = "#333";
      ctx.fillRect(X, Y, 50, 50);
