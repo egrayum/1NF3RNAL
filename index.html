@@ -6,11 +6,16 @@
     var c = document.getElementById("gameCanvas");
     var ctx = c.getContext("2d");
     var score = 0;
+    var mouseX;
+    var mouseY;
     function draws () {
+     mouseX = event.clientX;
+     mouseY = event.clientY;
      ctx.fillStyle = "#333";
      ctx.fillRect(100, 100, 50, 50);
      ctx.font = "30px Arial";
-     ctx.fillText("Score: " + score, 400, 50);
+     ctx.fillText("Score: " + score, 350, 50);
+     ctx.fillText("mouseX: " + mouseX + " mouseY: " + mouseY, 350, 100);
     }
    </script>
   </div>
