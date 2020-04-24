@@ -23,28 +23,29 @@
      ctx.font = "30px Arial"; 
      ctx.fillText("mouseX: " + mouseX + " mouseY: " + mouseY, 350, 100);
      //ctx.fillText("Score: " + score, 350, 50);
-     ctx.fillText("X: " + X + "Y: " + Y, 50, 50);
      //ifs for moving the player
-     //move left
-     if (mouseY < Y + 60 && mouseY > Y - 10 && mouseX < X) {
+     document.onkeydown = checkKey;
+
+     function checkKey(e) {
+      e = e || window.event;
+      if (e.keyCode == '38') {
+       //move up 
+       Y -= 50;
+      }
+      else if (e.keyCode == '40') {
+       //move down
+       Y += 50;
+      }
+      else if (e.keyCode == '37') {
+      //move left
       X -= 50;
-      alert("left is true");
-     }
-     //move right
-     if (mouseY < Y + 60 && mouseY > Y - 10 && mouseX > X) {
-      X += 50;
-      alert("right is true");
-     }
-     //move up
-     if (mouseX < X + 160 && mouseX > X + 110 && mouseY < Y) {
-      Y -= 50;
-      alert("up is true");
-     }
-     //move down
-     if (mouseX < X + 160 && mouseX > X + 110 && mouseY > Y) {
-      Y += 50;
-      alert("down is true");
-     }
+      }
+      else if (e.keyCode == '39') {
+      //move right
+       X += 50;
+      }
+
+     }  
      //"player"
      ctx.fillStyle = "#333";
      ctx.fillRect(X, Y, 50, 50);
