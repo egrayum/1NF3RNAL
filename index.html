@@ -1,15 +1,16 @@
 <html>
  <head>
-  <div id="canvasDiv" style="width:100%;">
-   <canvas id="gameCanvas" onclick="draws()" width="800px" height="600" style="background-color:#666; text-align:center;"></canvas>
+  <div id="canvasDiv" style="width:100%; text-align:center;">
+   <canvas id="gameCanvas" onclick="draws()" width="800px" height="600" style="background-color:#666;"></canvas>
    <script>
     var c = document.getElementById("gameCanvas");
     var ctx = c.getContext("2d");
+    var score = 0;
     function draws () {
      ctx.fillStyle = "#333";
      ctx.fillRect(100, 100, 50, 50);
      ctx.font = "30px Arial";
-     ctx.fillText("Score: 0", 400, 50);
+     ctx.fillText("Score: " + score, 400, 50);
     }
    </script>
   </div>
