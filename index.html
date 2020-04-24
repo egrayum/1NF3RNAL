@@ -1,6 +1,6 @@
 <html>
  <head>
-  <div id="canvasDiv">
+  <div id="canvasDiv" style="width:100%;">
    <canvas id="gameCanvas" onclick="draws()" width="800px" height="600" style="background-color:#666; text-align:center;"></canvas>
    <script>
     var c = document.getElementById("gameCanvas");
@@ -8,6 +8,8 @@
     function draws () {
      ctx.fillStyle = "#333";
      ctx.fillRect(100, 100, 50, 50);
+     ctx.font = "30px Arial";
+     ctx.fillText("Score: 0", 400, 50);
     }
    </script>
   </div>
