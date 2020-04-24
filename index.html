@@ -11,15 +11,15 @@
     function draws () {
      ctx.fillStyle = "#333";
      ctx.fillRect(100, 100, 50, 50);
-     ctx.font = "30px Arial";
-     ctx.fillText("Score: " + score, 350, 50);
      ctx.fillStyle = "#666";
      ctx.fillRect(345, 15, 400, 90);
      mouseX = event.clientX;
      mouseY = event.clientY;
+     ctx.font = "30px Arial"; 
      ctx.fillStyle = "#333";
      ctx.fillText("mouseX: " + mouseX + " mouseY: " + mouseY, 350, 100);
      score++;
+     ctx.fillText("Score: " + score, 350, 50);
     }
    </script>
   </div>
