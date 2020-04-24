@@ -1,7 +1,7 @@
 <html>
- <head>
+ <head style="padding:0; margin:0;">
   <div id="canvasDiv" style="width:100%; text-align:center;">
-   <canvas id="gameCanvas" onclick="draws()" width="800px" height="600" style="background-color:#666;"></canvas>
+   <canvas id="gameCanvas" onclick="draws()" width="800px" height="600" style="background-color:#666; width:100%; height:100%;"></canvas>
    <script>
     var c = document.getElementById("gameCanvas");
     var ctx = c.getContext("2d");
@@ -37,13 +37,13 @@
       ctx.fillRect(X, Y, 50, 50);
      }
      //move up
-     if (mouseX < X + 110 && mouseX > X + 40 && mouseY < Y) {
+     if (mouseX < X + 60 && mouseX > X - 10 && mouseY < Y) {
       Y -= 50;
       ctx.fillStyle = "#333";
       ctx.fillRect(X, Y, 50, 50);
      }
      //move down
-     if (mouseX < X + 110 && mouseX > X + 40 && mouseY > Y) {
+     if (mouseX < X + 60 && mouseX > X - 10 && mouseY > Y) {
       Y += 50;
       ctx.fillStyle = "#333";
       ctx.fillRect(X, Y, 50, 50);
