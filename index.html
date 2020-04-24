@@ -31,7 +31,7 @@
       ctx.fillRect(X, Y, 50, 50);
      }
      //move right
-     if (X < mouseX) {
+     if (mouseY < Y + 60 && mouseY > Y - 10 && mouseX > X + 50) {
       X += 50;
       ctx.fillStyle = "#333";
       ctx.fillRect(X, Y, 50, 50);
