@@ -1,14 +1,14 @@
 <html>
  <head style="padding:0; margin:0;">
   <div id="canvasDiv" style="width:100%; text-align:center;">
-   <canvas id="gameCanvas" onclick="square()" width="800px" height="650" style="background-color:#666; width:100%; height:100%;"></canvas>
-   <script>
+   <canvas id="gameCanvas" onclick="square()" width="800px" height="580" style="background-color:#666; width:100%; height:100%;"></canvas>
+   <script onload="square()">
     var c = document.getElementById("gameCanvas");
     var ctx = c.getContext("2d");
     var X = 400;
     function square () {
      ctx.fillStyle = "#333";
-     ctx.fillRect(X, 480, 50, 50);
+     ctx.fillRect(X, 460, 50, 50);
     }
    </script>
   </div>
