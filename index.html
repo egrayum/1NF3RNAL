@@ -21,14 +21,12 @@
      ctx.font = "30px Arial";
      ctx.fillText("mouseX: " + mouseX, 130, 130);
      if (X < mouseX) {
-      alert("right");
       X += 50;
       background("#666");
       ctx.fillStyle = "#333";
       ctx.fillRect(450, 460, 50, 50); 
      }
      if (X > mouseX) {
-      alert("left');
       X -= 50;
       background("#666");
       ctx.fillStyle = "#333";
