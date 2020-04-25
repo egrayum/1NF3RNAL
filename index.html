@@ -1,21 +1,31 @@
 <html>
  <head style="padding:0; margin:0;">
   <div id="canvasDiv" style="width:100%; text-align:center;">
-   <canvas id="gameCanvas" onclick="clearIt()" width="800px" height="580" style="background-color:#666; width:100%; height:100%;"></canvas>
+   <canvas id="gameCanvas" onclick="clearIt()" width="801px" height="581" style="background-color:#666; width:100%; height:100%;"></canvas>
    <script>
     var c = document.getElementById("gameCanvas");
     var ctx = c.getContext("2d");
     var X = 400;
+    var cY;
     var mouseX;
+    function setup() {
+     c.width = 800;
+     c.height = 580;
+    }
+    function draw() {
+     ctx.fillStyle = "#333";
+     ctx.fillRect(100, 100, 20, 20);
+     //ctx.ellipse(100, cY, 30, 30, Math.PI / 4, 0, 2 * Math.PI); 
+    }
     function init () {
      ctx.fillStyle = "#333";
      ctx.fillRect(X, 460, 50, 50);
      ctx.font = "30px Arial";
-     ctx.fillText("click to star", 350, 200);
+     ctx.fillText("press on the sides of the screen to control the square and avoid the circles", 50, 200);
     }
     function clearIt () {
      ctx.fillStyle = "#666";
-     ctx.fillRect(345, 160, 300, 40);
+     ctx.fillRect(45, 160, 300, 40);
      mouseX = event.clientX;
      if (X < mouseX) {
       ctx.fillStyle = "#666";
