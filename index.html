@@ -11,18 +11,16 @@
     function setup() {
      c.width = 800;
      c.height = 580;
+     ctx.fillStyle = "#333";
+     ctx.fillRect(X, 460, 50, 50);
+     ctx.font = "30px Arial";
+     ctx.fillText("press on the sides of the screen to control", 50, 200);
+     ctx.fillText("the square and avoid the circles", 50, 250); 
     }
     function draw() {
      ctx.fillStyle = "#333";
      ctx.fillRect(100, 100, 20, 20);
      //ctx.ellipse(100, cY, 30, 30, Math.PI / 4, 0, 2 * Math.PI); 
-    }
-    function init () {
-     ctx.fillStyle = "#333";
-     ctx.fillRect(X, 460, 50, 50);
-     ctx.font = "30px Arial";
-     ctx.fillText("press on the sides of the screen to control", 50, 200);
-     ctx.fillText("the square and avoid the circles", 50, 250);
     }
     function clearIt () {
      ctx.fillStyle = "#666";
@@ -46,6 +44,6 @@
    </script>
   </div>
  </head>
- <body onload="init()" style="background-color:#000;">
+ <body onload="setup()" style="background-color:#000;">
  </body>
 </html>
