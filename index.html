@@ -1,53 +1,14 @@
 <html>
  <head style="padding:0; margin:0;">
   <div id="canvasDiv" style="width:100%; text-align:center;">
-   <canvas id="gameCanvas" onclick="draws()" width="800px" height="650" style="background-color:#666; width:100%; height:100%;"></canvas>
-   <script onload="draws()">
+   <canvas id="gameCanvas" onclick="square()" width="800px" height="650" style="background-color:#666; width:100%; height:100%;"></canvas>
+   <script>
     var c = document.getElementById("gameCanvas");
     var ctx = c.getContext("2d");
-    var score = 0;
-    var mouseX;
-    var mouseY;
-    function loadRect () {
-     var X = 120;
-     var Y = 120;
+    var X = 400;
+    function square () {
      ctx.fillStyle = "#333";
-     ctx.fillRect(X, Y, 50, 50);
-    }
-    function draws () {
-     //clearing square
-     ctx.fillStyle = "#666";
-     ctx.fillRect(345, 15, 400, 90);
-     //gets mouseX and mouseY and increases score
-     mouseX = event.clientX;
-     mouseY = event.clientY;
-     score += 1;
-     //draws text
-     ctx.fillStyle = "#333"; 
-     ctx.font = "30px Arial"; 
-     ctx.fillText("mouseX: " + mouseX + " mouseY: " + mouseY, 350, 100);
-     //ctx.fillText("Score: " + score, 350, 50);
-     //ifs for moving the player
-     function draw () {
-      document.onkeydown = checkKey;
-      document.onclick = checkKey;
-     }
-     function checkKey(e) {
-      e = e || window.event;
-      
-      if (e.keyCode == '37' || mouseX < X) {
-       //move left
-       X -= 50;
-       ctx.fillStyle = "#333";
-       ctx.fillRect(X, Y, 50, 50); 
-      }
-      else if (e.keyCode == '39' || mouseX > X) {
-       //move right
-       X += 50;
-       ctx.fillStyle = "#333";
-       ctx.fillRect(X, Y, 50, 50); 
-      }
-     }  
+     ctx.fillRect(X, 480, 50, 50);
     }
    </script>
   </div>
