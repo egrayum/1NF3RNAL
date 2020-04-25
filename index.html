@@ -1,7 +1,7 @@
 <html>
  <head style="padding:0; margin:0;">
   <div id="canvasDiv" style="width:100%; text-align:center;">
-   <canvas id="gameCanvas" onclick="draw()" width="800px" height="580" style="background-color:#666; width:100%; height:100%;"></canvas>
+   <canvas id="gameCanvas" onclick="clear()" width="800px" height="580" style="background-color:#666; width:100%; height:100%;"></canvas>
    <script>
     var c = document.getElementById("gameCanvas");
     var ctx = c.getContext("2d");
@@ -13,14 +13,11 @@
      ctx.font = "30px Arial";
      ctx.fillText("click to start", 350, 200);
     }
-    function draw () {
-     ctx.fillStyle = "#333";
-     ctx.fillRect(X, 460, 50, 50); 
+    function clear () {
+     ctx.fillStyle = "#666";
+     ctx.fillRect(345, 160, 300, 40);
     }
-    function moves () {
      mouseX = event.clientX;
-     X++;
-    }
    </script>
   </div>
  </head>
