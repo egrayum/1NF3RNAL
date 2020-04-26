@@ -43,6 +43,9 @@
        cX = Math.floor(Math.random() * Math.floor(c.width));
        cY = 0;
       }
+      if (cY > 440 && cY < 530 && cX > X - 20 && cX < X + 70) {
+       score = 0;
+      }
      }
      circle1();
      //second circle
@@ -75,7 +78,7 @@
      ctx.fillRect(X, 460, 50, 50);
      ctx.font = "30px Arial";
      ctx.fillText("the game begins in 5 seconds. click on the sides of the ", 30, 200);
-     ctx.fillText("screen to control the square and avoid the circles", 30, 250);  
+     ctx.fillText("screen to control the square and avoid the circles.", 30, 250);  
      window.setTimeout(startGame, 5000);
     }
    </script>
