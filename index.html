@@ -10,10 +10,9 @@
     var cY = 0;
     var cY2 = 0;
     var mouseX;
-    var score = 0;
+    var score = 1;
     var cX = 300;
     var cX2 = 600;
-    var stopCircles = 0;
     //gets mouseX onclick
     c.onclick = function getMouseX() {
      mouseX = event.clientX;
@@ -32,23 +31,8 @@
       score++;
      }
     }
-    function spawnControl() {
-     respawn(4);
-     window.setTimeout(respawn(3), 1000);
-     window.setTimeout(respawn(2), 2000);
-     window.setTimeout(respawn(1), 3000);
-     window.setTimeout(startGame, 4000);
-    }
-    //countdown timer for respawn
-    function respawn(timeLeft) {
-     ctx.fillStyle = "#666";
-     ctx.fillRect(0, 0, c.width, c.height);
-     ctx.fillStyle = "#333";
-     ctx.fillText("You died! Respawning in: " + timeLeft + " seconds", 250, 200);
-    }
     //code for running the game
     function runGame() {
-     stopCircles = 0;
      //"background"
      ctx.fillStyle = "#666";
      ctx.fillRect(0, 0, c.width, c.height);
@@ -71,14 +55,9 @@
       }
       if (cY > 440 && cY < 530 && cX > X - 20 && cX < X + 70) {
        score = 0;
-       window.setTimeout(runGame, 4000);
-       spawnControl();
-       stopCircles = 1;
       }
      }
-     if (stopCircles != 1) {
-      circle1();
-     }
+     circle1();
      //second circle
      function circle2() {
       ctx.fillStyle = "#333";
@@ -92,15 +71,10 @@
       }
       if (cY2 > 430 && cY2 < 540 && cX2 > X - 30 && cX2 < X + 80) {
        score = 0;
-       window.setTimeout(runGame, 4000);
-       spawnControl();
-       stopCircles = 1;
       }
      }
      //delay for offset circles
-     if (stopCircles != 1) {
-      setTimeout(circle2, 500);
-     }
+     setTimeout(circle2(), 500);
      //code for moving the player
      //move right
      if (X < mouseX) {
@@ -117,7 +91,7 @@
      ctx.fillRect(X, 460, 50, 50);
      ctx.font = "30px Arial";
      ctx.fillText("the game begins in 5 seconds. click on the sides of the ", 30, 200);
-     ctx.fillText("screen to control the square and avoid the circles", 30, 250);  
+     ctx.fillText("screen to control the square and avoid the circles.", 30, 250);  
      window.setTimeout(startGame, 5000);
     }
    </script>
@@ -125,4 +99,4 @@
  </head>
  <body onload="init()" style="background-color:#000;">
  </body>
-</html>
+</html>  
