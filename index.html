@@ -33,8 +33,9 @@
       cX = Math.floor(Math.random() * Math.floor(c.width));
       cY = 0;
      }
-     ctx.fillStyle = "#333";
-     ctx.fillEllipse(cX, cY, 20, 20, Math.PI / 4, 0, 2 * Math.PI);
+     ctx.beginPath();
+     ctx.arc(cX, cY, 20, 0, 2 * Math.PI);
+     ctx.stroke();
      //ctx.font = "30px Arial";
      //ctx.fillText("mouseX: " + mouseX, 50, 200);
      //code for moving the player
@@ -53,7 +54,7 @@
      ctx.fillRect(X, 460, 50, 50);
      ctx.font = "30px Arial";
      ctx.fillText("the game begins in 5 seconds. click on the sides of the ", 30, 200);
-     ctx.fillText("screen to control the square and avoid the circles.", 30, 250);  
+     ctx.fillText("screen to control the square and avoid the circles", 30, 250);  
      window.setTimeout(startGame, 5000);
     }
    </script>
