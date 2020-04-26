@@ -36,7 +36,8 @@
      ctx.fillStyle = "#333";
      ctx.beginPath();
      ctx.fillArc(cX, cY, 20, 0, 2 * Math.PI);
-     ctx.stroke();
+     ctx.endPath();
+     ctx.fill();
      //ctx.font = "30px Arial";
      //ctx.fillText("mouseX: " + mouseX, 50, 200);
      //code for moving the player
