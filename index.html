@@ -36,7 +36,7 @@
      ctx.fillStyle = "#333";
      ctx.beginPath();
      ctx.fillArc(cX, cY, 20, 0, 2 * Math.PI);
-     ctx.endPath();
+     ctx.closePath();
      ctx.fill();
      //ctx.font = "30px Arial";
      //ctx.fillText("mouseX: " + mouseX, 50, 200);
@@ -56,7 +56,7 @@
      ctx.fillRect(X, 460, 50, 50);
      ctx.font = "30px Arial";
      ctx.fillText("the game begins in 5 seconds. click on the sides of the ", 30, 200);
-     ctx.fillText("screen to control the square and avoid the circles.", 30, 250);  
+     ctx.fillText("screen to control the square and avoid the circles", 30, 250);  
      window.setTimeout(startGame, 5000);
     }
    </script>
