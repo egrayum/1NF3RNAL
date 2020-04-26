@@ -14,13 +14,13 @@
     function runGame() {
      ctx.fillStyle = "#666";
      ctx.fillRect(0, 0, c.width, c.height);
-     X += 5;
      ctx.fillStyle = "#333";
      ctx.fillRect(X, 460, 50, 50);
      //code for moving the player
      mouseX = event.clientX;
      //move right
      if (X < mouseX) {
+      alert("run");
       X += 2;
      }
      //move left
