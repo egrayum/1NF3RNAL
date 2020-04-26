@@ -12,17 +12,14 @@
     var score = 0;
     //code for running the game
     function runGame() {
-     alert("detected");
      ctx.fillStyle = "#666";
-     ctx.fillRect(45, 160, 650, 100);
+     ctx.fillRect(0, 0, c.width, c.height);
      //draw function didn't work so I had to use a while loop
-     while (score < 10) {
+     while (score < 400) {
       //code for moving the player
       mouseX = event.clientX;
       //move right
       if (X < mouseX) {
-       ctx.fillStyle = "#666";
-       ctx.fillRect(X, 460, 50, 50); 
        X += 2;
        ctx.fillStyle = "#333";
        ctx.fillRect(X, 460, 50, 50); 
@@ -30,8 +27,6 @@
       }
       //move left
       if (X > mouseX) {
-       ctx.fillStyle = "#666";
-       ctx.fillRect(X, 460, 50, 50);  
        X -= 50;
        ctx.fillStyle = "#333";
        ctx.fillRect(X, 460, 50, 50); 
@@ -45,7 +40,7 @@
      ctx.fillRect(X, 460, 50, 50);
      ctx.font = "30px Arial";
      ctx.fillText("press on the sides of the screen to control", 50, 200);
-     ctx.fillText("the square and avoid the circles", 50, 250);  
+     ctx.fillText("the square and avoid the circles.", 50, 250);  
     }
    </script>
   </div>
