@@ -17,9 +17,16 @@
     c.onclick = function getMouseX() {
      mouseX = event.clientX;
     }
-    //function for running the game 50 times/second
+    //function for running the game 50 times/second and checking to increase score ~7 times/second
     function startGame() {
      window.setInterval(runGame, 20);
+     window.setInterval(incScore, 180);
+    }
+    //checks to increase score
+    function incScore() {
+     if (cY > 530 && cX < X - 20 || cY > 530 && cX > X + 70) {
+      score++;
+     }
     }
     //code for running the game
     function runGame() {
@@ -46,12 +53,6 @@
       if (cY > 440 && cY < 530 && cX > X - 20 && cX < X + 70) {
        score = 0;
       }
-      function incScore() {
-       if (cY > 530 && cX < X - 20 || cY > 530 && cX > X + 70) {
-        score++;
-       }
-      }
-      window.setInterval(incScore, 180);
      }
      circle1();
      //second circle
