@@ -14,6 +14,10 @@
     c.onclick = function getMouseX() {
      mouseX = event.clientX;
     }
+    //function for starting the game
+    function startGame() {
+     window.setInterval(runGame, 20);
+    }
     //code for running the game
     function runGame() {
      ctx.fillStyle = "#666";
@@ -25,7 +29,6 @@
      ctx.fillText("mouseX: " + mouseX, 50, 200);
      //move right
      if (X < mouseX) {
-      alert("run");
       X += 2;
      }
      //move left
@@ -38,9 +41,9 @@
      ctx.fillStyle = "#333";
      ctx.fillRect(X, 460, 50, 50);
      ctx.font = "30px Arial";
-     ctx.fillText("the game begins in 3 seconds. press on the sides of the ", 50, 200);
-     ctx.fillText("screen to control the square and avoid the circles.", 50, 250);  
-     setInterval(runGame, 3000);
+     ctx.fillText("the game begins in 5 seconds. press on the sides of the ", 50, 200);
+     ctx.fillText("screen to control the square and avoid the circles", 50, 250);  
+     window.setTimeout(startGame, 5000);
     }
    </script>
   </div>
