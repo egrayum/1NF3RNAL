@@ -18,6 +18,8 @@
      ctx.fillRect(X, 460, 50, 50);
      //code for moving the player
      mouseX = event.clientX;
+     ctx.font = "30px Arial";
+     ctx.fillText("mouseX: " + mouseX, 50, 200);
      //move right
      if (X < mouseX) {
       alert("run");
@@ -34,7 +36,7 @@
      ctx.fillRect(X, 460, 50, 50);
      ctx.font = "30px Arial";
      ctx.fillText("the game begins in 3 seconds. press on the sides of the ", 50, 200);
-     ctx.fillText("screen to control the square and avoid the circles.", 50, 250);  
+     ctx.fillText("screen to control the square and avoid the circles", 50, 250);  
      setInterval(runGame, 3000);
     }
    </script>
