@@ -72,9 +72,11 @@
       if (cY > 440 && cY < 530 && cX > X - 20 && cX < X + 70) {
        score = 0;
        window.setTimeout(runGame, 4000);
+       spawnControl();
+       stopCircles = 1;
       }
      }
-     if (stopCircles = 0) {
+     if (stopCircles != 1) {
       circle1();
      }
      //second circle
@@ -96,7 +98,7 @@
       }
      }
      //delay for offset circles
-     if (stopCircles = 0) {
+     if (stopCircles != 1) {
       setTimeout(circle2, 500);
      }
      //code for moving the player
@@ -115,7 +117,7 @@
      ctx.fillRect(X, 460, 50, 50);
      ctx.font = "30px Arial";
      ctx.fillText("the game begins in 5 seconds. click on the sides of the ", 30, 200);
-     ctx.fillText("screen to control the square and avoid the circles.", 30, 250);  
+     ctx.fillText("screen to control the square and avoid the circles", 30, 250);  
      window.setTimeout(startGame, 5000);
     }
    </script>
