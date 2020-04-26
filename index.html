@@ -14,9 +14,9 @@
     function runGame() {
      ctx.fillStyle = "#666";
      ctx.fillRect(0, 0, c.width, c.height);
+     X += 5;
      ctx.fillStyle = "#333";
      ctx.fillRect(X, 460, 50, 50);
-     alert("function run");
      //code for moving the player
      mouseX = event.clientX;
      //move right
@@ -34,7 +34,7 @@
      ctx.fillRect(X, 460, 50, 50);
      ctx.font = "30px Arial";
      ctx.fillText("press on the sides of the screen to control", 50, 200);
-     ctx.fillText("the square and avoid the circles", 50, 250);  
+     ctx.fillText("the square and avoid the circles.", 50, 250);  
     }
    </script>
   </div>
