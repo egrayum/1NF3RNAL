@@ -1,48 +1,57 @@
 <html>
  <head style="padding:0; margin:0;">
   <div id="canvasDiv" style="width:100%; text-align:center;">
-   <canvas id="gameCanvas" width="800px" height="580px" onclick="movePlayer()" style="background-color:#666; width:100%; height:100%;"></canvas>
+   <canvas id="gameCanvas" width="800px" height="580px" style="background-color:#666; width:100%; height:100%;"></canvas>
    <script>
+    //variables
     var c = document.getElementById("gameCanvas");
     var ctx = c.getContext("2d");
     var X = 400;
     var cY;
     var mouseX;
     var score = 0;
-    var i;
-    function init() {
+    //checks if mouse is clicked
+    c.onclick = function detect() {
+     var run = true;
+    }
+    //code for running the game
+    function runGame() {
+     //initial setup
      ctx.fillStyle = "#333";
      ctx.fillRect(X, 460, 50, 50);
      ctx.font = "30px Arial";
      ctx.fillText("press on the sides of the screen to control", 50, 200);
-     ctx.fillText("the square and avoid the circles.", 50, 250); 
-    }
-    c.onclick = function drawR () {
-      ctx.fillStyle = "#000";
-      ctx.fillRect(100, 100, 40, 40);
-    }
-    function movePlayer () {
-     ctx.fillStyle = "#666";
-     ctx.fillRect(45, 160, 650, 100);
-     mouseX = event.clientX;
-     if (X < mouseX) {
+     ctx.fillText("the square and avoid the circles", 50, 250);  
+     //when mouse is clicked, the game runs
+     if (run) {
       ctx.fillStyle = "#666";
-      ctx.fillRect(X, 460, 50, 50); 
-      X += 50;
-      ctx.fillStyle = "#333";
-      ctx.fillRect(X, 460, 50, 50); 
-     }
-     if (X > mouseX) {
-      ctx.fillStyle = "#666";
-      ctx.fillRect(X, 460, 50, 50);  
-      X -= 50;
-      ctx.fillStyle = "#333";
-      ctx.fillRect(X, 460, 50, 50); 
+      ctx.fillRect(45, 160, 650, 100);
+      //draw function didn't work so I had to use a while loop
+      while (score < 10) {
+       //code for moving the player
+       mouseX = event.clientX;
+       //move right
+       if (X < mouseX) {
+        ctx.fillStyle = "#666";
+        ctx.fillRect(X, 460, 50, 50); 
+        X += 50;
+        ctx.fillStyle = "#333";
+        ctx.fillRect(X, 460, 50, 50); 
+       }
+       //move left
+       if (X > mouseX) {
+        ctx.fillStyle = "#666";
+        ctx.fillRect(X, 460, 50, 50);  
+        X -= 50;
+        ctx.fillStyle = "#333";
+        ctx.fillRect(X, 460, 50, 50); 
+       }
+      }
      }
     }
    </script>
   </div>
  </head>
- <body onload="init()" style="background-color:#000;">
+ <body onload="runGame()" style="background-color:#000;">
  </body>
 </html>
