@@ -26,6 +26,9 @@
      //"background"
      ctx.fillStyle = "#666";
      ctx.fillRect(0, 0, c.width, c.height);
+     //score
+     ctx.fillStyle = "#333";
+     ctx.fillText("Score: " + score, 30, 60);
      //player
      ctx.fillStyle = "#333";
      ctx.fillRect(X, 460, 50, 50);
@@ -72,7 +75,7 @@
      ctx.fillRect(X, 460, 50, 50);
      ctx.font = "30px Arial";
      ctx.fillText("the game begins in 5 seconds. click on the sides of the ", 30, 200);
-     ctx.fillText("screen to control the square and avoid the circles.", 30, 250);  
+     ctx.fillText("screen to control the square and avoid the circles", 30, 250);  
      window.setTimeout(startGame, 5000);
     }
    </script>
