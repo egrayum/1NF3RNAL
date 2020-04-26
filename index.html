@@ -8,9 +8,11 @@
     var ctx = c.getContext("2d");
     var X = 400;
     var cY = 0;
+    var cY2 = 0;
     var mouseX;
     var score = 0;
     var cX = 300;
+    var cX2 = 600;
     //gets mouseX onclick
     c.onclick = function getMouseX() {
      mouseX = event.clientX;
@@ -28,17 +30,32 @@
      ctx.fillStyle = "#333";
      ctx.fillRect(X, 460, 50, 50);
      //dangerous circles to avoid
-     cY += 3;
-     if (cY > c.height) {
-      cX = Math.floor(Math.random() * Math.floor(c.width));
-      cY = 0;
+     function circle1() {
+      ctx.fillStyle = "#333";
+      ctx.beginPath();
+      ctx.arc(cX, cY, 20, 0, 2 * Math.PI);
+      ctx.fill();
+      cY += 7;
+      if (cY > c.height) {
+       cX = Math.floor(Math.random() * Math.floor(c.width));
+       cY = 0;
+      }
      }
-     ctx.fillStyle = "#333";
-     ctx.beginPath();
-     ctx.arc(cX, cY, 20, 0, 2 * Math.PI);
-     ctx.fill();
-     //ctx.font = "30px Arial";
-     //ctx.fillText("mouseX: " + mouseX, 50, 200);
+     circle1();
+     //second circle
+     function circle2() {
+      ctx.fillStyle = "#333";
+      ctx.beginPath();
+      ctx.arc(cX2, cY2, 30, 0, 2 * Math.PI);
+      ctx.fill();
+      cY2 += 5;
+      if (cY2 > c.height) {
+       cX2 = Math.floor(Math.random() * Math.floor(c.width));
+       cY2 = 0;
+      }
+     }
+     //delay for offset circles
+     setTimeout(circle2(), 500);
      //code for moving the player
      //move right
      if (X < mouseX) {
