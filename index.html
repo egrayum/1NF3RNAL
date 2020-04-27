@@ -83,7 +83,7 @@
       ctx.beginPath();
       ctx.arc(cX, cY, 20, 0, 2 * Math.PI);
       ctx.fill();
-      cY += 8;
+      cY += 7 + score/20;
       if (cY > c.height) {
        cX = Math.floor(Math.random() * Math.floor(c.width));
        cY = 0;
@@ -96,7 +96,7 @@
       ctx.beginPath();
       ctx.arc(cX2, cY2, 30, 0, 2 * Math.PI);
       ctx.fill();
-      cY2 += 6;
+      cY2 += 5 + score/20;
       if (cY2 > c.height) {
        cX2 = Math.floor(Math.random() * Math.floor(c.width));
        cY2 = 0;
@@ -104,14 +104,12 @@
      }
      //delay for offset circles
      setTimeout(circle2(), 500);
-     //code for moving the player
-     //move right
-     if (X < mouseX) {
-      X += 4;
+     //move player
+     if (mouseX < X || event.keyCode == 27) {
+      X -= 6;
      }
-     //move left
-     if (X > mouseX) {
-      X -= 4;
+     if (mouseX > X || event.keyCode == 29) {
+      X += 6;
      }
     }
     //initial setup
@@ -120,7 +118,7 @@
      ctx.fillRect(X, 460, 50, 50);
      ctx.font = "30px Arial";
      ctx.fillText("the game begins in 5 seconds. click on the sides of the ", 30, 200);
-     ctx.fillText("screen to control the square and avoid the circles.", 30, 250);  
+     ctx.fillText("screen to control the square and avoid the circles", 30, 250);  
      window.setTimeout(startGame, 5000);
     }
    </script>
