@@ -13,9 +13,23 @@
     var score = 1;
     var cX = 300;
     var cX2 = 600;
+    var rTimerVar = 4;
     //gets mouseX onclick
     c.onclick = function getMouseX() {
      mouseX = event.clientX;
+    }
+    //respawn timer
+    function rTimer() {
+     ctx.fillStyle = "#666";
+     ctx.fillRect(0, 0, c.width, c.height);
+     rTimerVar -= 1;
+     ctx.fillStyle = "#333";
+     ctx.fillText("you died. respawning in " + rTimerVar + " seconds", 300, 250);
+     if (rTimerVar > 0) {
+      window.setTimeout(rTimer, 1000);
+     } else if (rTimerVar == 0) {
+      window.setInterval(runGame, 20);
+     }   
     }
     //function for running the game 50 times/second and checking to increase score ~7 times/second
     function startGame() {
@@ -55,6 +69,9 @@
       }
       if (cY > 440 && cY < 530 && cX > X - 20 && cX < X + 70) {
        score = 0;
+       rTimerVar = 4;
+       rTimer();
+       window.setTimeout(runGame, 4000);
       }
      }
      circle1();
@@ -71,6 +88,9 @@
       }
       if (cY2 > 430 && cY2 < 540 && cX2 > X - 30 && cX2 < X + 80) {
        score = 0;
+       rTimerVar = 4;
+       rTimer();
+       window.setTimeout(runGame, 4000); 
       }
      }
      //delay for offset circles
@@ -91,7 +111,7 @@
      ctx.fillRect(X, 460, 50, 50);
      ctx.font = "30px Arial";
      ctx.fillText("the game begins in 5 seconds. click on the sides of the ", 30, 200);
-     ctx.fillText("screen to control the square and avoid the circles.", 30, 250);  
+     ctx.fillText("screen to control the square and avoid the circles", 30, 250);  
      window.setTimeout(startGame, 5000);
     }
    </script>
