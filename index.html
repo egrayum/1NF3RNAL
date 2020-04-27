@@ -21,6 +21,12 @@
     //gets mouseX onclick
     c.onclick = function getMouseX() {
      mouseX = event.clientX;
+     if (mouseX < X) {
+      X -= 6;
+     }
+     if (mouseX > X) {
+      X += 6;
+     }
     }
     //respawn timer
     function rTimer() {
@@ -104,21 +110,13 @@
      }
      //delay for offset circles
      setTimeout(circle2(), 500);
-     //move player
-     if (mouseX < X || event.keyCode == 27) {
-      X -= 6;
-     }
-     if (mouseX > X || event.keyCode == 29) {
-      X += 6;
-     }
-    }
     //initial setup
     function init() {
      ctx.fillStyle = "#333";
      ctx.fillRect(X, 460, 50, 50);
      ctx.font = "30px Arial";
      ctx.fillText("the game begins in 5 seconds. click on the sides of the ", 30, 200);
-     ctx.fillText("screen to control the square and avoid the circles", 30, 250);  
+     ctx.fillText("screen to control the square and avoid the circles.", 30, 250);  
      window.setTimeout(startGame, 5000);
     }
    </script>
