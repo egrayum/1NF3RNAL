@@ -48,9 +48,6 @@
      if (cY2 > 540 && cX2 < X - 30 || cY2 > 540 && cX2 > X + 80) {
       score++;
      }
-     if (cY3> 540 && cX3 < X - 30 || cY3 > 540 && cX3 > X + 80) {
-      score++;
-     }
     }
     //function for checking if you die
     function checkDeath() {
@@ -62,13 +59,6 @@
        clearInterval(deathRate);
       }
       if (cY > 440 && cY < 530 && cX > X - 20 && cX < X + 70) {
-       score = 0;
-       rTimer();
-       clearInterval(checkRate);
-       clearInterval(gameRate);
-       clearInterval(deathRate);
-      }
-      if (cY3 > 440 && cY3 < 530 && cX3 > X - 20 && cX3 < X + 70) {
        score = 0;
        rTimer();
        clearInterval(checkRate);
@@ -114,19 +104,6 @@
      }
      //delay for offset circles
      setTimeout(circle2(), 500);
-     //third circle
-     function circle3() {
-      ctx.fillStyle = "#333";
-      ctx.beginPath();
-      ctx.arc(cX3, cY3, 25, 0, 2 * Math.PI);
-      ctx.fill();
-      cY2 += 7;
-      if (cY3 > c.height) {
-       cX3 = Math.floor(Math.random() * Math.floor(c.width));
-       cY3 = 0;
-      }
-     }
-     circle3();
      //code for moving the player
      //move right
      if (X < mouseX) {
