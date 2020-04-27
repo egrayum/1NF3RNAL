@@ -93,7 +93,7 @@
       ctx.beginPath();
       ctx.arc(cX, cY, 20, 0, 2 * Math.PI);
       ctx.fill();
-      cY += 7;
+      cY += 8;
       if (cY > c.height) {
        cX = Math.floor(Math.random() * Math.floor(c.width));
        cY = 0;
@@ -106,7 +106,7 @@
       ctx.beginPath();
       ctx.arc(cX2, cY2, 30, 0, 2 * Math.PI);
       ctx.fill();
-      cY2 += 5;
+      cY2 += 6;
       if (cY2 > c.height) {
        cX2 = Math.floor(Math.random() * Math.floor(c.width));
        cY2 = 0;
@@ -120,14 +120,14 @@
       ctx.beginPath();
       ctx.arc(cX3, cY3, 25, 0, 2 * Math.PI);
       ctx.fill();
-      cY2 += 8;
+      cY2 += 7;
       if (cY3 > c.height) {
        cX3 = Math.floor(Math.random() * Math.floor(c.width));
        cY3 = 0;
       }
      }
      if (score > 40) {
-      circle3();
+      window.setInterval(circle3, 20);
      }
      //code for moving the player
      //move right
