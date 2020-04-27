@@ -30,6 +30,9 @@
     }
     //function for running the game 50 times/second and checking to increase score ~7 times/second
     function startGame() {
+     X = 400;
+     cY = 0;
+     cY2 = 0;
      gameRate = window.setInterval(runGame, 20);
      checkRate = window.setInterval(incScore, 160);
      deathRate = window.setInterval(checkDeath, 160);
@@ -116,6 +119,7 @@
      ctx.fillText("the game begins in 5 seconds. click on the sides of the ", 30, 200);
      ctx.fillText("screen to control the square and avoid the circles.", 30, 250);  
      window.setTimeout(startGame, 5000);
+     
     }
    </script>
   </div>
