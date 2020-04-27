@@ -21,12 +21,6 @@
     //gets mouseX onclick
     c.onclick = function getMouseX() {
      mouseX = event.clientX;
-     if (mouseX < X) {
-      X -= 6;
-     }
-     if (mouseX > X) {
-      X += 6;
-     }
     }
     //respawn timer
     function rTimer() {
@@ -106,6 +100,12 @@
       if (cY2 > c.height) {
        cX2 = Math.floor(Math.random() * Math.floor(c.width));
        cY2 = 0;
+      }
+      if (mouseX < X) {
+       X -= 6;
+      }
+      if (mouseX > X) {
+       X += 6;
       }
      }
      //delay for offset circles
