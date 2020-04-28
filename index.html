@@ -18,19 +18,29 @@
     var gameRate;
     var checkRate;
     var deathRate;
+    var direction;
     //gets mouseX onclick
     c.onclick = function getMouseX() {
      mouseX = event.clientX;
+     if (mouseX < X) {
+      direction = 1;  
+     }
+     if (mouseX > X) {
+      direction = 2; 
+     }
     }
     //key control
     document.addEventListener("keydown", function(event) {
      if (event.keyCode == 37) {
       mouseX = undefined;
-      X -= 6;
+      direction = 1;
      }
      if (event.keyCode == 39) {
       mouseX = undefined;
-      X += 6;
+      direction = 2;
+     }
+     if (event.keyCode == 40) {
+      direction = 3;  
      }
     })
     //respawn timer
@@ -116,22 +126,18 @@
      //delay for offset circles
      setTimeout(circle2(), 500);
      //code for moving the player
-     //move right
-     if (X < mouseX) {
-      X += 4;
+     if (direction == 2) {
+      X += 6;  
+     } else if (direction == 1) {
+      X -= 6;  
      }
-     //move left
-     if (X > mouseX) {
-      X -= 4;
-     }
-    }
     //initial setup
     function init() {
      ctx.fillStyle = "#333";
      ctx.fillRect(X, 460, 50, 50);
      ctx.font = "30px Arial";
      ctx.fillText("the game begins in 5 seconds. click on the sides of the ", 30, 200);
-     ctx.fillText("screen to control the square and avoid the circles", 30, 250);  
+     ctx.fillText("screen to control the square and avoid the circles.", 30, 250);  
      window.setTimeout(startGame, 5000);
     }
    </script>
@@ -140,4 +146,3 @@
  <body onload="init()" style="background-color:#000;">
  </body>
 </html>  
-     
