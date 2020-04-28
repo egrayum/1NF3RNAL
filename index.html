@@ -24,7 +24,10 @@
     }
     document.addEventListener("keydown", function(event) {
      if (event.keyCode == 37) {
-        alert('hi.')
+      X -= 6;
+     }
+     if (event.keyCode == 39) {
+      X += 6;
      }
     })
     //respawn timer
@@ -125,7 +128,7 @@
      ctx.fillRect(X, 460, 50, 50);
      ctx.font = "30px Arial";
      ctx.fillText("the game begins in 5 seconds. click on the sides of the ", 30, 200);
-     ctx.fillText("screen to control the square and avoid the circles", 30, 250);  
+     ctx.fillText("screen to control the square and avoid the circles.", 30, 250);  
      window.setTimeout(startGame, 5000);
     }
    </script>
