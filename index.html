@@ -89,9 +89,8 @@
     }
     //code for running the game
     function runGame() {
-     //"background"
-     ctx.fillStyle = "#666";
-     ctx.fillRect(0, 0, c.width, c.height);
+     //background image
+     ctx.drawImage(background, 0, 0);
      //score
      ctx.fillStyle = "#333";
      ctx.fillText("Score: " + score, 30, 60);
@@ -138,6 +137,8 @@
      c.height = 550;
      var background = new Image();
      background.src = "https://raw.githubusercontent.com/egrayum/An-interactive-thing/master/Black%20Hole.jpg";
+     background.width = 100%;
+     background.height = 100%;
      background.onload = function() {
        ctx.drawImage(background, 0, 0);
      }
