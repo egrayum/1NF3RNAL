@@ -37,6 +37,10 @@
     }
     //key control
     document.addEventListener("keydown", function(event) {
+     if (event.keyCode == 32 && clickable == 1) {
+      clickable = 0;
+      startGame();
+     }
      if (event.keyCode == 37) {
       mouseX = undefined;
       direction = 1;
@@ -55,7 +59,7 @@
      background.src = "https://raw.githubusercontent.com/egrayum/An-interactive-thing/master/Black%20Hole.jpg";
      ctx.drawImage(background, 0, 0);
      ctx.fillStyle = "rgba(0, 0, 0, 0.6)";
-     ctx.fillRect(110, 30, 450, 250);
+     ctx.fillRect(64, 30, 600, 250);
      ctx.fillStyle = "#fff"; 
      if (localStorage.getItem("highscore") == undefined || score > localStorage.getItem("highscore")) {
       localStorage.removeItem("highscore");
@@ -64,7 +68,7 @@
      }
      ctx.fillText("Your highscore: " + localStorage.getItem("highscore"), 214, 124);
      ctx.fillText("Your score: " + score, 234, 174);
-     ctx.fillText("You died. click to play again", 134, 224);
+     ctx.fillText("You died. click or press space to play again", 94, 224);
      clickable = 1;
     }
     //function for running the game 50 times/second and checking to increase score ~7 times/second
@@ -113,8 +117,8 @@
      ctx.fillRect(60, 80, 590, 180);
      ctx.fillStyle = "#fff";
      ctx.font = "30px Arial";
-     ctx.fillText("Click to start the game. click on the", 80, 130);
-     ctx.fillText("sides of the screen or use arrow keys to", 80, 180);
+     ctx.fillText("Click or press space to start the game. tap", 80, 130);
+     ctx.fillText("the sides of the screen or use arrow keys to", 80, 180);
      ctx.fillText("control the square and avoid the circles.", 80, 230); 
      clickable = 1;
     }
