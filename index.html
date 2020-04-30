@@ -98,7 +98,7 @@
      ctx.font = "30px Arial";
      ctx.fillText("the game begins in 5 seconds. click on the sides of the ", 30, 200);
      ctx.fillText("screen to control the square and avoid the circles.", 30, 250);  
-     window.setTimeout(startGame, 5000);
+     window.setTimeout(startGame, 3500);
     }
     //code for running the game
     function runGame() {
@@ -141,9 +141,13 @@
      setTimeout(circle2(), 500);
      //code for moving the player
      if (direction == 2) {
-      X += 6;  
+      if (X + 5 < 660) {
+       X += 6;  
+      }
      } else if (direction == 1) {
-      X -= 6;  
+      if (X - 5 > 0) {
+       X -= 5; 
+      }
      }
     }  
    </script>
