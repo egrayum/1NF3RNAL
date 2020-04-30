@@ -96,9 +96,10 @@
      background.src = "https://raw.githubusercontent.com/egrayum/An-interactive-thing/master/Black%20Hole.jpg";
      ctx.drawImage(background, 0, 0);
      ctx.font = "30px Arial";
-     ctx.fillText("the game begins in 5 seconds. click on the sides of the ", 30, 200);
-     ctx.fillText("screen to control the square and avoid the circles.", 30, 250);  
-     window.setTimeout(startGame, 3500);
+     ctx.fillText("the game begins in 4 seconds. click on the", 30, 200);
+     ctx.fillText("sides of the screen or use arrow keys to", 30, 250);
+     ctx.fillText("control the square and avoid the circles.", 30, 300);  
+     window.setTimeout(startGame, 4000);
     }
     //code for running the game
     function runGame() {
