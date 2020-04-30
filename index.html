@@ -59,7 +59,7 @@
      background.src = "https://raw.githubusercontent.com/egrayum/An-interactive-thing/master/Black%20Hole.jpg";
      ctx.drawImage(background, 0, 0);
      ctx.fillStyle = "rgba(0, 0, 0, 0.6)";
-     ctx.fillRect(64, 30, 600, 250);
+     ctx.fillRect(34, 30, 620, 250);
      ctx.fillStyle = "#fff"; 
      if (localStorage.getItem("highscore") == undefined || score > localStorage.getItem("highscore")) {
       localStorage.removeItem("highscore");
@@ -68,7 +68,7 @@
      }
      ctx.fillText("Your highscore: " + localStorage.getItem("highscore"), 214, 124);
      ctx.fillText("Your score: " + score, 234, 174);
-     ctx.fillText("You died. click or press space to play again", 94, 224);
+     ctx.fillText("You died. click or press space to play again", 64, 224);
      clickable = 1;
     }
     //function for running the game 50 times/second and checking to increase score ~7 times/second
@@ -114,12 +114,12 @@
      background.src = "https://raw.githubusercontent.com/egrayum/An-interactive-thing/master/Black%20Hole.jpg";
      ctx.drawImage(background, 0, 0);
      ctx.fillStyle = "rgba(0, 0, 0, 0.6)";
-     ctx.fillRect(60, 80, 590, 180);
+     ctx.fillRect(30, 80, 620, 180);
      ctx.fillStyle = "#fff";
      ctx.font = "30px Arial";
-     ctx.fillText("Click or press space to start the game. tap", 80, 130);
-     ctx.fillText("the sides of the screen or use arrow keys to", 80, 180);
-     ctx.fillText("control the square and avoid the circles.", 80, 230); 
+     ctx.fillText("Click or press space to start the game. tap", 50, 130);
+     ctx.fillText("the sides of the screen or use arrow keys to", 50, 180);
+     ctx.fillText("control the square and avoid the circles.", 50, 230); 
      clickable = 1;
     }
     //code for running the game
