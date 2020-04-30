@@ -1,7 +1,7 @@
    <html>
  <head style="padding:20px; margin:20px;">
   <div id="canvasDiv" style="width:100%; text-align:center;">
-   <canvas id="gameCanvas" style="text-align:center; width:70%; height:80%;"></canvas>
+   <canvas id="gameCanvas" style="text-align:center; width:80%; height:80%;"></canvas>
    <script>
     //variables
     var c = document.getElementById("gameCanvas");
@@ -64,23 +64,23 @@
     }
     //checks to increase score
     function incScore() {
-     if (cY > 530 && cX < X - 20 || cY > 530 && cX > X + 70) {
+     if (cY > 300 && cX < X - 15 || cY > 310 && cX > X + 50) {
       score++;
      }
-     if (cY2 > 540 && cX2 < X - 30 || cY2 > 540 && cX2 > X + 80) {
+     if (cY2 > 310 && cX2 < X - 25 || cY2 > 310 && cX2 > X + 60) {
       score++;
      }
     }
     //function for checking if you die
     function checkDeath() {
-     if (cY2 > 430 && cY2 < 540 && cX2 > X - 30 && cX2 < X + 80) {
+     if (cY2 > 225 && cY2 < 310 && cX2 > X - 25 && cX2 < X + 60) {
        score = 0;
        rTimer();
        clearInterval(checkRate);
        clearInterval(gameRate);
        clearInterval(deathRate);
       }
-      if (cY > 440 && cY < 530 && cX > X - 20 && cX < X + 70) {
+      if (cY > 235 && cY < 300 && cX > X - 15 && cX < X + 50) {
        score = 0;
        rTimer();
        clearInterval(checkRate);
@@ -107,18 +107,18 @@
      background.src = "https://raw.githubusercontent.com/egrayum/An-interactive-thing/master/Black%20Hole.jpg";
      ctx.drawImage(background, 0, 0);
      //score
-     ctx.fillStyle = "#111";
+     ctx.fillStyle = "#666";
      ctx.fillText("Score: " + score, 30, 60);
      //player
      ctx.fillStyle = "#111";
-     ctx.fillRect(X, 294, 50, 50);
+     ctx.fillRect(X, 250, 35, 35);
      //dangerous circles to avoid
      function circle1() {
       ctx.fillStyle = "#111";
       ctx.beginPath();
-      ctx.arc(cX, cY, 20, 0, 2 * Math.PI);
+      ctx.arc(cX, cY, 15, 0, 2 * Math.PI);
       ctx.fill();
-      cY += 8;
+      cY += 7 + (score/20);
       if (cY > c.height) {
        cX = Math.floor(Math.random() * Math.floor(c.width));
        cY = 0;
@@ -129,9 +129,9 @@
      function circle2() {
       ctx.fillStyle = "#111";
       ctx.beginPath();
-      ctx.arc(cX2, cY2, 30, 0, 2 * Math.PI);
+      ctx.arc(cX2, cY2, 25, 0, 2 * Math.PI);
       ctx.fill();
-      cY2 += 6;
+      cY2 += 5 + (score/20);
       if (cY2 > c.height) {
        cX2 = Math.floor(Math.random() * Math.floor(c.width));
        cY2 = 0;
