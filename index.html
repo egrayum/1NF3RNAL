@@ -49,7 +49,7 @@
      background.src = "https://raw.githubusercontent.com/egrayum/An-interactive-thing/master/Black%20Hole.jpg";
      ctx.drawImage(background, 0, 0);
      ctx.fillStyle = "#111";
-     ctx.fillText("You died. respawning in 3 seconds", 300, 250);
+     ctx.fillText("You died. respawning in 3 seconds", 20, 150);
      window.setTimeout(startGame, 3000);
     }
     //function for running the game 50 times/second and checking to increase score ~7 times/second
@@ -118,7 +118,7 @@
       ctx.beginPath();
       ctx.arc(cX, cY, 15, 0, 2 * Math.PI);
       ctx.fill();
-      cY += 7 + (score/20);
+      cY += 8;
       if (cY > c.height) {
        cX = Math.floor(Math.random() * Math.floor(c.width));
        cY = 0;
@@ -131,7 +131,7 @@
       ctx.beginPath();
       ctx.arc(cX2, cY2, 25, 0, 2 * Math.PI);
       ctx.fill();
-      cY2 += 5 + (score/20);
+      cY2 += 7;
       if (cY2 > c.height) {
        cX2 = Math.floor(Math.random() * Math.floor(c.width));
        cY2 = 0;
