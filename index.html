@@ -55,11 +55,13 @@
      background.src = "https://raw.githubusercontent.com/egrayum/An-interactive-thing/master/Black%20Hole.jpg";
      ctx.drawImage(background, 0, 0);
      ctx.fillStyle = "#111";
+     ctx.fillText("Your score: " + score, 154, 124);
      ctx.fillText("You died. click to play again", 134, 174);
      clickable = 1;
     }
     //function for running the game 50 times/second and checking to increase score ~7 times/second
     function startGame() {
+     score = 0;
      X = 400;
      cY = 0;
      cY2 = 0;
@@ -80,14 +82,12 @@
     //function for checking if you die
     function checkDeath() {
      if (cY2 > 225 && cY2 < 310 && cX2 > X - 25 && cX2 < X + 60) {
-       score = 0;
        rTimer();
        clearInterval(checkRate);
        clearInterval(gameRate);
        clearInterval(deathRate);
       }
       if (cY > 235 && cY < 300 && cX > X - 15 && cX < X + 50) {
-       score = 0;
        rTimer();
        clearInterval(checkRate);
        clearInterval(gameRate);
