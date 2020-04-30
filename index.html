@@ -19,14 +19,20 @@
     var checkRate;
     var deathRate;
     var direction;
+    var clickable;
     //gets mouseX onclick
-    c.onclick = function getMouseX() {
-     mouseX = event.clientX;
-     if (mouseX < X) {
+    c.onclick = function clickStuff() {
+     if (clickable == 1) {
+      startGame(); 
+      clickable = 0;
+     } else {
+      mouseX = event.clientX;
+      if (mouseX < X) {
       direction = 1;  
-     }
-     if (mouseX > X) {
-      direction = 2; 
+      }
+      if (mouseX > X) {
+       direction = 2; 
+      }
      }
     }
     //key control
@@ -49,8 +55,8 @@
      background.src = "https://raw.githubusercontent.com/egrayum/An-interactive-thing/master/Black%20Hole.jpg";
      ctx.drawImage(background, 0, 0);
      ctx.fillStyle = "#111";
-     ctx.fillText("You died. respawning in 3 seconds", 134, 174);
-     window.setTimeout(startGame, 3000);
+     ctx.fillText("You died. click to play again", 134, 174);
+     clickable = 1;
     }
     //function for running the game 50 times/second and checking to increase score ~7 times/second
     function startGame() {
@@ -97,10 +103,10 @@
      ctx.drawImage(background, 0, 0);
      ctx.fillStyle = "#777";
      ctx.font = "30px Arial";
-     ctx.fillText("the game begins in 5 seconds. click on the", 80, 130);
+     ctx.fillText("Click to start the game. click on the", 80, 130);
      ctx.fillText("sides of the screen or use arrow keys to", 80, 180);
-     ctx.fillText("control the square and avoid the circles.", 80, 230);  
-     window.setTimeout(startGame, 5000);
+     ctx.fillText("control the square and avoid the circles.", 80, 230); 
+     clickable = 1;
     }
     //code for running the game
     function runGame() {
