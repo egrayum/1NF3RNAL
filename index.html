@@ -55,12 +55,12 @@
      background.src = "https://raw.githubusercontent.com/egrayum/An-interactive-thing/master/Black%20Hole.jpg";
      ctx.drawImage(background, 0, 0);
      ctx.fillStyle = "#111"; 
-     if (localStorage.getItem("highscore") == undefined || score > localStorage.getItem("highscore")) {
+     //if (localStorage.getItem("highscore") == undefined || score > localStorage.getItem("highscore")) {
      // localStorage.removeItem("highscore");
-      localStorage.setItem("highscore", score);
+     // localStorage.setItem("highscore", score);
       ctx.fillText("You have a new highscore!", 144, 74);
-     }
-     ctx.fillText("Your highscore: " + localStorage.getItem("highscore");, 164, 124);
+    // }
+    // ctx.fillText("Your highscore: " + localStorage.getItem("highscore");, 164, 124);
      ctx.fillText("Your score: " + score, 184, 174);
      ctx.fillText("You died. click to play again", 134, 224);
      clickable = 1;
