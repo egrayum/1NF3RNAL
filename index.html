@@ -87,9 +87,29 @@
        clearInterval(deathRate);
       }
     }
+      //initial setup
+    function init () {
+     c.width = 800;
+     c.height = 550;
+     var background = new Image();
+     background.src = "https://raw.githubusercontent.com/egrayum/An-interactive-thing/master/Black%20Hole.jpg";
+     background.width = 800;
+     background.height = 550;
+     ctx.drawImage(background, 0, 0);
+     ctx.fillStyle = "#333";
+     ctx.fillRect(X, 460, 50, 50);
+     ctx.font = "30px Arial";
+     ctx.fillText("the game begins in 5 seconds. click on the sides of the ", 30, 200);
+     ctx.fillText("screen to control the square and avoid the circles.", 30, 250);  
+     window.setTimeout(startGame, 5000);
+    }
     //code for running the game
     function runGame() {
      //background image
+     background = new Image();
+     background.src = "https://raw.githubusercontent.com/egrayum/An-interactive-thing/master/Black%20Hole.jpg";
+     background.width = 800;
+     background.height = 550;
      ctx.drawImage(background, 0, 0);
      //score
      ctx.fillStyle = "#333";
@@ -130,22 +150,6 @@
      } else if (direction == 1) {
       X -= 6;  
      }
-    }
-    //initial setup
-    function init () {
-     c.width = 800;
-     c.height = 550;
-     var background = new Image();
-     ctx.drawImage(background, 0, 0);
-     background.src = "https://raw.githubusercontent.com/egrayum/An-interactive-thing/master/Black%20Hole.jpg";
-     background.width = 800;
-     background.height = 550;
-     ctx.fillStyle = "#333";
-     ctx.fillRect(X, 460, 50, 50);
-     ctx.font = "30px Arial";
-     ctx.fillText("the game begins in 5 seconds. click on the sides of the ", 30, 200);
-     ctx.fillText("screen to control the square and avoid the circles.", 30, 250);  
-     window.setTimeout(startGame, 5000);
     }
    </script>
   </div>
