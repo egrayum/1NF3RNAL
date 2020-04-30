@@ -1,7 +1,7 @@
    <html>
- <head style="padding:0; margin:0;">
+ <head style="padding:20px; margin:20px;">
   <div id="canvasDiv" style="width:100%; text-align:center;">
-   <canvas id="gameCanvas" style="width:100%; height:100%;"></canvas>
+   <canvas id="gameCanvas" style="text-align:center;"></canvas>
    <script>
     //variables
     var c = document.getElementById("gameCanvas");
@@ -89,12 +89,10 @@
     }
       //initial setup
     function init () {
-     c.width = 800;
-     c.height = 550;
+     c.width = 693;
+     c.height = 344;
      var background = new Image();
      background.src = "https://raw.githubusercontent.com/egrayum/An-interactive-thing/master/Black%20Hole.jpg";
-     background.width = 800;
-     background.height = 550;
      ctx.drawImage(background, 0, 0);
      ctx.fillStyle = "#333";
      ctx.fillRect(X, 460, 50, 50);
