@@ -1,7 +1,7 @@
    <html>
  <head style="padding:20px; margin:20px;">
   <div id="canvasDiv" style="width:100%; text-align:center;">
-   <canvas id="gameCanvas" style="text-align:center;"></canvas>
+   <canvas id="gameCanvas" style="text-align:center; width:70%; height:80%;"></canvas>
    <script>
     //variables
     var c = document.getElementById("gameCanvas");
@@ -45,9 +45,10 @@
     })
     //respawn timer
     function rTimer() {
-     ctx.fillStyle = "#666";
-     ctx.fillRect(0, 0, c.width, c.height);
-     ctx.fillStyle = "#333";
+     background = new Image();
+     background.src = "https://raw.githubusercontent.com/egrayum/An-interactive-thing/master/Black%20Hole.jpg";
+     ctx.drawImage(background, 0, 0);
+     ctx.fillStyle = "#111";
      ctx.fillText("You died. respawning in 3 seconds", 300, 250);
      window.setTimeout(startGame, 3000);
     }
@@ -94,8 +95,6 @@
      var background = new Image();
      background.src = "https://raw.githubusercontent.com/egrayum/An-interactive-thing/master/Black%20Hole.jpg";
      ctx.drawImage(background, 0, 0);
-     ctx.fillStyle = "#333";
-     ctx.fillRect(X, 460, 50, 50);
      ctx.font = "30px Arial";
      ctx.fillText("the game begins in 5 seconds. click on the sides of the ", 30, 200);
      ctx.fillText("screen to control the square and avoid the circles.", 30, 250);  
@@ -108,14 +107,14 @@
      background.src = "https://raw.githubusercontent.com/egrayum/An-interactive-thing/master/Black%20Hole.jpg";
      ctx.drawImage(background, 0, 0);
      //score
-     ctx.fillStyle = "#333";
+     ctx.fillStyle = "#111";
      ctx.fillText("Score: " + score, 30, 60);
      //player
-     ctx.fillStyle = "#333";
-     ctx.fillRect(X, 460, 50, 50);
+     ctx.fillStyle = "#111";
+     ctx.fillRect(X, 294, 50, 50);
      //dangerous circles to avoid
      function circle1() {
-      ctx.fillStyle = "#333";
+      ctx.fillStyle = "#111";
       ctx.beginPath();
       ctx.arc(cX, cY, 20, 0, 2 * Math.PI);
       ctx.fill();
@@ -128,7 +127,7 @@
      circle1();
      //second circle
      function circle2() {
-      ctx.fillStyle = "#333";
+      ctx.fillStyle = "#111";
       ctx.beginPath();
       ctx.arc(cX2, cY2, 30, 0, 2 * Math.PI);
       ctx.fill();
