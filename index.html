@@ -24,16 +24,16 @@
     var menu2;
     //gets mouseX onclick
     c.onclick = function clickStuff() {
-     if (event.pageY > 534 && clickable == 2 && menu == "Controls") {
+     if (event.pageY > 534 && clickable == 2) {
       menu = "Changelog";
       menu2 = "Controls";
       init();
      }
-     if (event.pageY > 534 && clickable == 2 && menu == "Changelog") {
+   /*  if (event.pageY > 534 && clickable == 2 && menu == "Changelog") {
       menu = "Controls";
       menu2 = "Changelog";
       init();
-     } 
+     } */
      if (event.pageY < 144 && clickable == 1) {
       init();
       clickable = 2;
