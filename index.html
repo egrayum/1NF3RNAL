@@ -26,8 +26,8 @@
     c.onclick = function clickStuff() {
      if (event.pageY > 534 && clickable == 2) {
       menu = "Changelog";
-      menu2 = "Controls";
-      init();
+     // menu2 = "Controls";
+      window.setTimeout(init, 20);
      }
    /*  if (event.pageY > 534 && clickable == 2 && menu == "Changelog") {
       menu = "Controls";
