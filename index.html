@@ -22,14 +22,14 @@
     var clickable;
     //gets mouseX onclick
     c.onclick = function clickStuff() {
-     if (event.clientY < 154 && clickable == 1) {
+     if (event.pageY < 94 && clickable == 1) {
       init();
      }
-     if (clickable == 1 && event.clientY > 154) {
+     if (clickable == 1 && event.pageY > 94 && event.pageY < 284) {
       startGame(); 
       clickable = 0;
      } else {
-      mouseX = event.clientX;
+      mouseX = event.pageX;
       if (mouseX < X) {
       direction = 1;  
       }
@@ -122,8 +122,11 @@
      background.src = "https://raw.githubusercontent.com/egrayum/An-interactive-thing/master/Black%20Hole.jpg";
      ctx.drawImage(background, 0, 0);
      ctx.fillStyle = "rgba(0, 0, 0, 0.6)";
+     //options rect
      ctx.fillRect(50, 294, 580, 190);
-     ctx.fillRect(160, 20, 380, 75);
+     //title rect
+     ctx.fillRect(160, 20, 360, 75);
+     ctx.fillRect(50, 130, 580, 180);
      ctx.fillStyle = "#fff";
      ctx.font = "60px Arial";
      ctx.fillText("1NF3RNAL", 180, 80);
