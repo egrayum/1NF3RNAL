@@ -22,10 +22,10 @@
     var clickable;
     //gets mouseX onclick
     c.onclick = function clickStuff() {
-     if (event.clientY < 94 && clickable == 1) {
+     if (event.clientY < 114 && clickable == 1) {
       init();
      }
-     if (clickable == 1 && event.clientY > 94) {
+     if (clickable == 1 && event.clientY > 114) {
       startGame(); 
       clickable = 0;
      } else {
@@ -125,7 +125,7 @@
      ctx.fillRect(30, 30, 620, 289);
      ctx.fillStyle = "#fff";
      ctx.font = "60px Arial";
-     ctx.fillText("1NF3RNAL", 160, 80);
+     ctx.fillText("1NF3RNAL", 180, 80);
      ctx.font = "30px Arial";            
      ctx.fillText("Click or press space to start the game. tap", 50, 130);
      ctx.fillText("the sides of the screen or use arrow keys to", 50, 180);
