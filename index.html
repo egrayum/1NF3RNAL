@@ -68,6 +68,7 @@
      ctx.fillStyle = "rgba(0, 0, 0, 0.6)";
      ctx.fillRect(34, 30, 620, 320);
      ctx.fillStyle = "#fff"; 
+     ctx.font = "30px Arial";
      if (localStorage.getItem("highscore") == undefined || score > localStorage.getItem("highscore")) {
       localStorage.removeItem("highscore");
       localStorage.setItem("highscore", score);
@@ -125,13 +126,13 @@
      //options rect
      ctx.fillRect(50, 294, 580, 190);
      //title rect
-     ctx.fillRect(160, 20, 360, 75);
-     ctx.fillRect(50, 115, 580, 165);
+     ctx.fillRect(160, 5, 360, 75);
+     ctx.fillRect(50, 135, 580, 185);
      ctx.fillStyle = "#fff";
      ctx.font = "60px Arial";
-     ctx.fillText("1NF3RNAL", 180, 80);
-     ctx.font = "35px Arial";    
-     ctx.fillText("Controls", 200, 155);
+     ctx.fillText("1NF3RNAL", 180, 65);
+     ctx.font = "40px Arial";    
+     ctx.fillText("Controls", 280, 155);
      clickable = 1;
     }
     //code for running the game
