@@ -21,12 +21,19 @@
     var direction;
     var clickable;
     var menu = "Controls";
+    var menu2 = "Changelog";
     //gets mouseX onclick
     c.onclick = function clickStuff() {
-     if (event.pageY > 534 && clickable == 2) {
+     if (event.pageY > 534 && clickable == 2 && menu == "Controls") {
       menu = "Changelog";
+      menu2 = "Controls";
       init();
      }
+     if (event.pageY > 534 && clickable == 2 && menu == "Changelog") {
+      menu = "Controls";
+      menu2 = "Changelog";
+      init();
+     } 
      if (event.pageY < 144 && clickable == 1) {
       init();
       clickable = 2;
@@ -139,6 +146,7 @@
      ctx.fillText("1NF3RNAL", 180, 65);
      ctx.font = "40px Arial";    
      ctx.fillText(menu, 255, 135);
+     ctx.fillText(menu2, 320, 320);
      ctx.font = "15px Arial";
      ctx.fillText("Mobile: tap on the sides of the screen to move the square. Avoid the circles.", 80, 165);
      ctx.fillText("Click on the menu text at the score screen to go to the menu.", 120, 185);
