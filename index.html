@@ -22,10 +22,10 @@
     var clickable;
     //gets mouseX onclick
     c.onclick = function clickStuff() {
-     if (event.pageY < 94 && clickable == 1) {
+     if (event.pageY < 124 && clickable == 1) {
       init();
      }
-     if (clickable == 1 && event.pageY > 94 && event.pageY < 284) {
+     if (clickable == 1 && event.pageY > 124 && event.pageY < 284) {
       startGame(); 
       clickable = 0;
      } else {
@@ -126,11 +126,12 @@
      ctx.fillRect(50, 294, 580, 190);
      //title rect
      ctx.fillRect(160, 20, 360, 75);
-     ctx.fillRect(50, 130, 580, 180);
+     ctx.fillRect(50, 115, 580, 165);
      ctx.fillStyle = "#fff";
      ctx.font = "60px Arial";
      ctx.fillText("1NF3RNAL", 180, 80);
-     ctx.font = "30px Arial";           
+     ctx.font = "35px Arial";    
+     ctx.fillText("Controls", 200, 155);
      clickable = 1;
     }
     //code for running the game
