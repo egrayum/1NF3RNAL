@@ -25,7 +25,7 @@
     var menuY2 = 294;
     //gets mouseX onclick
     c.onclick = function clickStuff() {
-     if (event.pageY > 534 && clickable == 2 && menu == 1) {
+     if (event.pageY > 534 && clickable == 2) {
       menu = 2;
       menuY = 294;
       menuY2 = 94;
@@ -151,7 +151,7 @@
      ctx.fillText("Controls", 255, menuY + 40);
      ctx.font = "15px Arial";
      ctx.fillText("Mobile: tap on the sides of the screen to move the square. Avoid the circles.", 80, menuY + 75);
-     ctx.fillText("Click on the menu text at the score screen to go to the menu.", 120, menuY + 95);
+     ctx.fillText("Click on the menu text at the score screen to go to the menu.", 120, menuY + 90);
      ctx.fillText("Keyboard: left and right arrow keys to move, down arrow key to stop moving.", 80, menuY + 105);
      ctx.fillText("Press the M key at the score screen to go to the menu.", 120, menuY + 125);
      ctx.fillText("Tap here or press space to start game", 200, menuY + 163);
