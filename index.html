@@ -39,29 +39,27 @@
      }
     }
     //gets mouseX onclick
-    function clickStuff() {
-     if (mousedown) { 
-      if (event.pageY > 534 && clickable == 2 && difficulty == 1) {
-       init(2);
-      }
-      if (event.pageY > 534 && clickable == 2 && difficulty == 2) {
-       init(1);
-      } 
-      if (event.pageY < 144 && clickable == 1) {
-       init();
-       clickable = 2;
-      }
-      if (clickable == 2 && event.pageY > 144 && event.pageY < 534) {
-       startGame(); 
-       clickable = 0;
-      } else {
-       mouseX = event.pageX;
-       if (mouseX < X) {
+    c.onclick = function clickStuff() {
+     if (event.pageY > 534 && clickable == 2 && difficulty == 1) {
+      init(2);
+     }
+     if (event.pageY > 534 && clickable == 2 && difficulty == 2) {
+      init(1);
+     } 
+     if (event.pageY < 144 && clickable == 1) {
+      init();
+      clickable = 2;
+     }
+     if (clickable == 2 && event.pageY > 144 && event.pageY < 534) {
+      startGame(); 
+      clickable = 0;
+     } else {
+      mouseX = event.pageX;
+      if (mouseX < X) {
        direction = 1;  
-       }
-       if (mouseX > X) {
-        direction = 2; 
-       }
+      }
+      if (mouseX > X) {
+       direction = 2; 
       }
      }
     }
@@ -170,7 +168,6 @@
      ctx.fillText("Tap here or press space to start game", 200, 250);
      clickable = 2;
      pleasework(what);
-     window.setInterval(clickstuff, 20);
     }
     //code for running the game
     function runGame() {
