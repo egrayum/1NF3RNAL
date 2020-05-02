@@ -30,6 +30,7 @@
     //gets mouseX onclick
     c.onclick = function clickStuff() {
      if (event.pageY > 534 && clickable == 2 && difficulty == "easy") {
+      alert("hard"); 
       difficulty = "hard";
       init();
       pleasework();
@@ -160,6 +161,7 @@
      ctx.fillText("Press the M key at the score screen to go to the menu.", 120, 225);
      ctx.fillText("Tap here or press space to start game", 200, 250);
      clickable = 2;
+     pleasework();
     }
     //code for running the game
     function runGame() {
