@@ -23,6 +23,7 @@
     var menu;
     var menu2;
     var difficulty = 1;
+    var score2 = 0;
     function pleasework (type) {
      if (type == 2) {
       difficulty = 2;
@@ -99,10 +100,19 @@
      if (localStorage.getItem("highscore") == undefined || score > localStorage.getItem("highscore")) {
       localStorage.removeItem("highscore");
       localStorage.setItem("highscore", score);
-      ctx.fillText("You have a new highscore!", 144, 124);
+     } 
+     if (localStorage.getItem("highscore2") == undefined || score2 > localStorage.getItem("highscore2")) {
+      localStorage.removeItem("highscore2");
+      localStorage.setItem("highscore2", score2);
      }
      ctx.fillText("Menu", 274, 74);
-     ctx.fillText("Your highscore: " + localStorage.getItem("highscore"), 214, 174);
+     if (difficulty == 1) {
+      ctx.fillText("Easy mode: ", 200, 124);
+      ctx.fillText("Your highscore: " + localStorage.getItem("highscore"), 214, 174);
+     } else if (difficulty == 2) {
+      ctx.fillText("Hard mode: ", 200, 124);
+      ctx.fillText("Your highscore: " + localStorage.getItem("highscore2"), 214, 174);
+     }
      ctx.fillText("Your score: " + score, 234, 224);
      ctx.fillText("You died. click or press space to play again", 64, 274);
     }
@@ -120,13 +130,25 @@
     //checks to increase score
     function incScore() {
      if (cY > 300 && cX < X - 15 || cY > 300 && cX > X + 50) {
-      score++;
+      if (difficulty == 1) {
+       score++;
+      } else {
+       score2++;
+      }
      }
      if (cY2 > 310 && cX2 < X - 25 || cY2 > 310 && cX2 > X + 60) {
-      score++;
+       if (difficulty == 1) {
+       score++;
+      } else {
+       score2++;
+      } 
      }
      if (cY3 > 305 && cX3 < X - 20 || cY3 > 305 && cX3 > X + 55) {
-      score++;  
+      if (difficulty == 1) {
+       score++;
+      } else {
+       score2++;
+      }
      }
     }
     //function for checking if you die
@@ -188,7 +210,11 @@
      //score
      ctx.font = "30px Arial";
      ctx.fillStyle = "#666";
-     ctx.fillText("Score: " + score, 30, 60);
+     if (difficulty == 1) {
+      ctx.fillText("Score: " + score, 30, 60);
+     } else {
+      ctx.fillText("Score: " + score2, 30, 60);
+     }
      //player
      ctx.fillStyle = "#111";
      ctx.fillRect(X, 250, 35, 35);
