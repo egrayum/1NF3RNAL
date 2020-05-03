@@ -84,6 +84,7 @@
     })
     //respawn timer
     function rTimer() {
+     clickable = 1; 
      background = new Image();
      background.src = "https://raw.githubusercontent.com/egrayum/An-interactive-thing/master/Black%20Hole.jpg";
      ctx.drawImage(background, 0, 0);
@@ -100,7 +101,6 @@
      ctx.fillText("Your highscore: " + localStorage.getItem("highscore"), 214, 174);
      ctx.fillText("Your score: " + score, 234, 224);
      ctx.fillText("You died. click or press space to play again", 64, 274);
-     clickable = 1;
     }
     //function for running the game 50 times/second and checking to increase score ~7 times/second
     function startGame() {
