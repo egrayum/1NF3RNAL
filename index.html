@@ -139,14 +139,14 @@
     }
     //checks to increase score
     function incScore() {
-     if (cY > 300 && cX < X - 15 || cY > 300 && cX > X + 50) {
+     if (cY > 300 + score/12 && cX < X - 15 + score/12 || cY > 300 + score/12 && cX > X + 50 + score/12) {
       if (difficulty == 1) {
        score++;
       } else {
        score2++;
       }
      }
-     if (cY2 > 310 && cX2 < X - 25 || cY2 > 310 && cX2 > X + 60) {
+     if (cY2 > 310 + score/18 && cX2 < X - 25 + score/18 || cY2 > 310 + score/18 && cX2 > X + 60 + score/18) {
        if (difficulty == 1) {
        score++;
       } else {
@@ -163,13 +163,13 @@
     }
     //function for checking if you die
     function checkDeath() {
-     if (cY2 > 225 && cY2 < 310 && cX2 > X - 25 && cX2 < X + 60) {
+     if (cY2 > 225 + score/18 && cY2 < 310 + score/18 && cX2 > X - 25 + score/18 && cX2 < X + 60 + score/18) {
        rTimer();
        clearInterval(checkRate);
        clearInterval(gameRate);
        clearInterval(deathRate);
       }
-      if (cY > 235 && cY < 300 && cX > X - 15 && cX < X + 50) {
+      if (cY > 235 + score/12 && cY < 300 + score/12 && cX > X - 15 + score/12 && cX < X + 50 + score/12) {
        rTimer();
        clearInterval(checkRate);
        clearInterval(gameRate);
