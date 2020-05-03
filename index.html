@@ -39,7 +39,7 @@
      }
     }
     //gets mouseX onclick
-    c.onclick = function clickStuff() {
+    c.onmousedown = function clickStuff() {
      if (event.pageY > 534 && clickable == 2 && difficulty == 1) {
       init(2);
      }
@@ -231,6 +231,6 @@
    </script>
   </div>
  </head>
- <body onload="init(2)" style="background-color:#000;">
+ <body onload="init(1)" style="background-color:#000;">
  </body>
 </html>  
