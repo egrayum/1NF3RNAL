@@ -185,7 +185,11 @@
       ctx.beginPath();
       ctx.arc(cX, cY, 15, 0, 2 * Math.PI);
       ctx.fill();
-      cY += 7;
+      if (difficulty == 2) {
+       cY += 10;
+      } else if (difficulty == 1) {
+       cY += 7;
+      }
       if (cY > c.height) {
        if (difficulty == 2) {
         cX = X;
@@ -211,6 +215,21 @@
      }
      //delay for offset circles
      setTimeout(circle2(), 500);
+     //third circle for hard difficulty
+     function circle3() {
+      ctx.fillStyle = "#e80e0f";
+      ctx.beginPath();
+      ctx.arc(cX3, cY3, 20, 0, 2 * Math.PI);
+      ctx.fill();
+      cY3 += 9;
+      if (cY3 > c.height) {
+       cX3 = Math.floor(Math.random() * Math.floor(c.width));
+       cY3 = 0;
+      }
+     }
+     if (difficulty == 2) {
+      circle3();
+     }
      //code for moving the player
      if (direction == 2) {
       if (X + 5 < 660) {
