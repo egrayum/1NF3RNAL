@@ -42,8 +42,7 @@
     c.onmousedown = function clickStuff() {
      if (event.pageY > 534 && clickable == 2 && difficulty == 1) {
       init(2);
-     }
-     if (event.pageY > 534 && clickable == 2 && difficulty == 2) {
+     } else if (event.pageY > 534 && clickable == 2 && difficulty == 2) {
       init(1);
      } 
      if (event.pageY < 144 && clickable == 1) {
@@ -231,6 +230,6 @@
    </script>
   </div>
  </head>
- <body onload="init(1)" style="background-color:#000;">
+ <body onload="init(2)" style="background-color:#000;">
  </body>
 </html>  
