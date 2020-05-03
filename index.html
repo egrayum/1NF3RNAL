@@ -187,15 +187,12 @@
       ctx.fill();
       cY += 7;
       if (cY > c.height) {
-       cX = Math.floor(Math.random() * Math.floor(c.width));
-       cY = 0;
-      }
-      if (difficulty == 2) {
-       if (cY > 220 && X > cX && Math.floor(Math.random() * Math.floor(5)) == 2) {
-        cX += 15;
-       }
-       if (cY > 220 && X < cX && Math.floor(Math.random() * Math.floor(5)) == 2) {
-        cX -= 15;
+       if (difficulty == 2) {
+        cX = X;
+        cY = 0;
+       } else if (difficulty == 1) {
+        cX = Math.floor(Math.random() * Math.floor(c.width));
+        cY = 0;
        }
       }
      }
