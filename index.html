@@ -115,11 +115,14 @@
     }
     //checks to increase score
     function incScore() {
-     if (cY > 300 && cX < X - 15 || cY > 310 && cX > X + 50) {
+     if (cY > 300 && cX < X - 15 || cY > 300 && cX > X + 50) {
       score++;
      }
      if (cY2 > 310 && cX2 < X - 25 || cY2 > 310 && cX2 > X + 60) {
       score++;
+     }
+     if (cY3 > 305 && cX3 < X - 20 || cY3 > 305 && cX3 > X + 55) {
+      score++;  
      }
     }
     //function for checking if you die
@@ -135,6 +138,12 @@
        clearInterval(checkRate);
        clearInterval(gameRate);
        clearInterval(deathRate);
+      }
+      if (cY3 > 230 && cY3 < 305 && cX3 > X - 20 && cX3 < X + 55) {
+       rTimer();
+       clearInterval(checkRate);
+       clearInterval(gameRate);
+       clearInterval(deathRate); 
       }
     }
       //initial setup
@@ -244,6 +253,6 @@
    </script>
   </div>
  </head>
- <body onload="init(2)" style="background-color:#000;">
+ <body onload="init(1)" style="background-color:#000;">
  </body>
 </html>  
