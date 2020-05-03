@@ -83,8 +83,11 @@
       mouseX = undefined;
       direction = 2;
      }
-     if (event.keyCode == 40) {
-      direction = 3;  
+    })
+    document.addEventListener("keyup", function(event) {
+     if (event.keyCode == 37 || keyCode == 39) {
+      mouseX = undefined;
+      direction = 3;
      }
     })
     //respawn timer
@@ -225,7 +228,11 @@
      function circle1() {
       ctx.fillStyle = "#111";
       ctx.beginPath();
-      ctx.arc(cX, cY, 15, 0, 2 * Math.PI);
+      if (difficulty == 1){
+       ctx.arc(cX, cY, 15 + score/12, 0, 2 * Math.PI);
+      } else {
+       ctx.arc(cX, cY, 20, 0, 2 * Math.PI); 
+      }
       ctx.fill();
       if (difficulty == 2) {
        cY += 10;
@@ -247,6 +254,11 @@
      function circle2() {
       ctx.fillStyle = "#111";
       ctx.beginPath();
+      if (difficulty == 1) {
+        ctx.arc(cX2, cY2, 25 + score/18, 0, 2 * Math.PI); 
+      } else {
+       ctx.arc(cX2, cY2, 28, 0, 2 * Math.PI);
+      }
       ctx.arc(cX2, cY2, 25, 0, 2 * Math.PI);
       ctx.fill();
       cY2 += 6;
@@ -261,7 +273,7 @@
      function circle3() {
       ctx.fillStyle = "#e80e0f";
       ctx.beginPath();
-      ctx.arc(cX3, cY3, 20, 0, 2 * Math.PI);
+      ctx.arc(cX3, cY3, 22, 0, 2 * Math.PI);
       ctx.fill();
       cY3 += 9;
       if (cY3 > c.height) {
@@ -278,7 +290,7 @@
        if (difficulty == 1) {
         X += 6;  
        } else {
-        X += 9;  
+        X += 8;  
        }
       }
      } else if (direction == 1) {
@@ -286,7 +298,7 @@
        if (difficulty == 1) {
         X -= 6; 
        } else {
-        X -= 9; 
+        X -= 8; 
        }
       }
      }
