@@ -119,13 +119,14 @@
     //function for running the game 50 times/second and checking to increase score ~7 times/second
     function startGame() {
      score = 0;
+     score2 = 0;
      X = 400;
      cY = 0;
      cY2 = 0;
      mouseX = 0;
      gameRate = window.setInterval(runGame, 20);
-     checkRate = window.setInterval(incScore, 160);
-     deathRate = window.setInterval(checkDeath, 160);
+     checkRate = window.setInterval(incScore, 100);
+     deathRate = window.setInterval(checkDeath, 100);
     }
     //checks to increase score
     function incScore() {
@@ -272,11 +273,19 @@
      //code for moving the player
      if (direction == 2) {
       if (X + 5 < 660) {
-       X += 6;  
+       if (difficulty == 1) {
+        X += 6;  
+       } else {
+        X += 9;  
+       }
       }
      } else if (direction == 1) {
       if (X - 5 > 0) {
-       X -= 5; 
+       if (difficulty == 1) {
+        X -= 6; 
+       } else {
+        X -= 9; 
+       }
       }
      }
     }  
