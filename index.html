@@ -109,11 +109,12 @@
      if (difficulty == 1) {
       ctx.fillText("Easy mode: ", 200, 124);
       ctx.fillText("Your highscore: " + localStorage.getItem("highscore"), 214, 174);
+      ctx.fillText("Your score: " + score, 234, 224);
      } else if (difficulty == 2) {
       ctx.fillText("Hard mode: ", 200, 124);
       ctx.fillText("Your highscore: " + localStorage.getItem("highscore2"), 214, 174);
+      ctx.fillText("Your score: " + score2, 234, 224);
      }
-     ctx.fillText("Your score: " + score, 234, 224);
      ctx.fillText("You died. click or press space to play again", 64, 274);
     }
     //function for running the game 50 times/second and checking to increase score ~7 times/second
@@ -123,7 +124,8 @@
      X = 400;
      cY = 0;
      cY2 = 0;
-     mouseX = 0;
+     mouseX = undefined;
+     direction = undefined;
      gameRate = window.setInterval(runGame, 20);
      checkRate = window.setInterval(incScore, 100);
      deathRate = window.setInterval(checkDeath, 100);
