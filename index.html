@@ -130,8 +130,12 @@
      mouseX = undefined;
      direction = undefined;
      gameRate = window.setInterval(runGame, 20);
-     checkRate = window.setInterval(incScore, 100);
-     deathRate = window.setInterval(checkDeath, 100);
+     if (difficulty == 1) {
+       checkRate = window.setInterval(incScore, 160);
+     } else {
+       checkRate = window.setInterval(incScore, 110);
+     }
+     deathRate = window.setInterval(checkDeath, 50);
     }
     //checks to increase score
     function incScore() {
