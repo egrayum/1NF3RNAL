@@ -47,6 +47,10 @@
       init();
       clickable = 2;
      }
+     if (event.pageY > 144 && clickable == 1) {
+      startGame();
+      clickable = 0;
+     }
      if (clickable == 2 && event.pageY > 144 && event.pageY < 534) {
       startGame(); 
       clickable = 0;
