@@ -10,8 +10,6 @@ You are the square at the bottom of the screen. Avoid the circles and try to get
 Controls: 
 Mobile: Tap the sides of the screen.
 
-Keyboard: Left arrow to move left, right arrow to move right, down arrow to stop moving.
+Keyboard: Left arrow to move left, right arrow to move right.
 
-Play now: https://egrayum.github.io/An-interactive-thing/
-
-Coming soon: Your highscore, global highscore
+Play now: https://egrayum.github.io/1NF3RNAL/
